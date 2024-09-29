@@ -8,22 +8,20 @@
 
 import { createPrompt } from 'bun-promptx'
 
-const speedOfLight = 2.998 * 10 ** 8
+const speedOfLight = 2.998 * (10 ** 8)
 
 const objectMassInput = createPrompt(
-        "Enter the mass of your object in kiligrams: ")
+  'Enter the mass of your object in kilograms: ')
 
-if (objectMassInput.value === null) {
-  console.log("You did not enter any input.")
-  } else {
-          const objectMassString = objectMassInput.value
-          if (isNaN(parseFloat(objectMassString))) {
-          console.log("You did not enter a number.")
-             } else {
-                     const objectMass = parseFloat(objectMassString)
-                     const energyOutput = objectMass * speedOfLight ** 2
-                     console.log(`${objectMass}kg of mass would produce ${energyOutput}J of energy. `)
-             }
-  }
-console.log("\nDone.")
+const objectMassString = objectMassInput.value
 
+if (isNaN(parseFloat(objectMassString))) {
+  console.log('You did not enter a number.')
+} else {
+  const objectMass = parseFloat(objectMassString)
+  const energyOutput = objectMass * (speedOfLight ** 2)
+  console.log(
+    `${objectMass}kg of mass would produce ${energyOutput} J of energy. `)
+}
+
+console.log('\nDone.')
